@@ -2,17 +2,17 @@
 
 int main()
 {
-    // int n, pos, count = 0;
-    // printf("Enter your number: ");
-    // scanf("%d", &n);
+    int n, pos, count = 0;
+    printf("Enter your number: ");
+    scanf("%d", &n);
     
-    // while (n)
-    // {
-    //     count++;
-    //     n &= (n-1);
-    // }
+    while (n)
+    {
+        count++;
+        n &= (n-1);
+    }
 
-    // printf("Number of set bits is %d", count);
+    printf("Number of set bits is %d", count);
     int i;
     printf("%d", i);
 
