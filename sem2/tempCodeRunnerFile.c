@@ -1,28 +1,27 @@
-int main()
-// {
-//     int n = 4;
-//     float a[n], sum = 0, avg;
-//     printf("Enter %d numbers: ", n);
-//     for (int i = 0; i < n; i++)
-//     {
-//         // printf("Enter the %d number: \n", i + 1);
-//         scanf("%f", &a[i]);
-//     }
+#include<stdio.h>
 
-//     for (int i = 0; i <= n / 2; i++)
-//     {
-//         int temp = a[i];
-//         a[i] = a[n - 1 - i];
-//         a[n - i - 1] = temp;
-//     }
-//     for (int i = 0; i < n; i++)
-//         printf("%f ", a[i]);
+int main(){
+    char str[40], *pt;
+    int i = 0;
+    printf("Enter the name to calculate length: \n");
 
-//     // for (int i = 0; i < n; i++)
-//     //     sum += a[i];
-//     // avg = sum / n;
+    gets(str);
 
-//     // printf("The average is: %.2f", avg);
+    pt = str;
 
-//     return 0;
-// }
+    while((*pt) != '\0')
+    {
+        i++;
+        pt++;
+    }
+
+    --pt;
+    while (i--)
+    {
+        printf("%c", *pt);
+        --pt;
+    }
+
+    // printf("The length of string is string: %d",i);
+    return 0;
+}
