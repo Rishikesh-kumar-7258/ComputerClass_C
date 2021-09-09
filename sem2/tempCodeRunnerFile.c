@@ -1,27 +1,32 @@
 #include<stdio.h>
 
-int main(){
-    char str[40], *pt;
-    int i = 0;
-    printf("Enter the name to calculate length: \n");
+#include<stdlib.h>
 
-    gets(str);
+#include <string.h>
 
-    pt = str;
 
-    while((*pt) != '\0')
-    {
-        i++;
-        pt++;
-    }
 
-    --pt;
-    while (i--)
-    {
-        printf("%c", *pt);
-        --pt;
-    }
+int main(void)
+{
 
-    // printf("The length of string is string: %d",i);
-    return 0;
+int maxtineCount 500, maxCharCount = 500, index, j, count;
+char *line = NULL;
+
+size t size;
+
+char a[maxLineCount];
+
+for (index = 0; index < maxLineCount; index++) a[index] (char *)malloc(maxCharCount = sizeof(char));
+
+int nooftine = 0;
+
+// read the input as line
+
+while(getline(&line, &size, stdin) != -1)
+{
+    strcpy(a[nooftine++], line);
+}
+for (index = 0; index < nooftine; index++)
+
+printf("%s", a[index]); return 0;
 }
