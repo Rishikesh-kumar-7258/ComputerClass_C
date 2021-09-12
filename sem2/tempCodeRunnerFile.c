@@ -1,32 +1,24 @@
-#include<stdio.h>
-
-#include<stdlib.h>
-
-#include <string.h>
-
-
-
-int main(void)
+#include <stdio.h>
+struct player
 {
-
-int maxtineCount 500, maxCharCount = 500, index, j, count;
-char *line = NULL;
-
-size t size;
-
-char a[maxLineCount];
-
-for (index = 0; index < maxLineCount; index++) a[index] (char *)malloc(maxCharCount = sizeof(char));
-
-int nooftine = 0;
-
-// read the input as line
-
-while(getline(&line, &size, stdin) != -1)
+    char name[20];
+    int jrsyno;
+};
+int main()
 {
-    strcpy(a[nooftine++], line);
-}
-for (index = 0; index < nooftine; index++)
+    struct player *p, p1[3];
 
-printf("%s", a[index]); return 0;
+    for (int i = 0; i <= 2; i++)
+    {
+        p = &p1[i];
+        printf("\nEnter no.%d player name and the jersey no.:\n", i + 1);
+        scanf("%s%d", &p->name, &p->jrsyno);
+    }
+    for (int j = 0; j <= 2; j++)
+    {
+        p = &p1[j];
+        printf("\nNo. %d player is %s and the jersey no. is %d\n", j + 1, p->name, p->jrsyno);
+    }
+
+    return 0;
 }
