@@ -16,7 +16,7 @@ int main()
 	
 	for (int i = 0; i < n; i++)
 	{
-		int temp = arr[i];
+		int temp = arr[i]%100;
 		if (temp >= 20 && temp < 30) arr[i] += 30;
 	}
 	
