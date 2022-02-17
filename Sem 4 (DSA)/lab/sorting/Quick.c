@@ -33,19 +33,47 @@ void QuickSort(int arr[], int l, int h)
     }
 }
 
+void quickSortIterative(int arr[], int l, int h)
+{
+    int stack[5 * h];
+    int top = -1;
+
+    stack[++top] = l;
+    stack[++top] = h;
+
+    while (top >= 0)
+    {
+        int high = stack[top--];
+        int low = stack[top--];
+
+        if (high <= low) continue;
+
+        int p = pivot(arr, low, high);
+
+        stack[++top] = low;
+        stack[++top] = p - 1;
+
+        stack[++top] = p;
+        stack[++top] = high;
+    }
+}
+
 int main()
 {
     printf("Enter the size of the array: ");
-    int n; scanf("%d", &n);
+    int n;
+    scanf("%d", &n);
 
     printf("Enter the eleements of the array: ");
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
-    
-    QuickSort(arr, 0, n - 1);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    quickSortIterative(arr, 0, n - 1);
     printf("Sorted Array : ");
 
-    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
     printf("\n");
 
     return 0;
