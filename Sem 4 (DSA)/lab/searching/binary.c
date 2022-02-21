@@ -40,6 +40,20 @@ int binarSearchIterative(int arr[], int l, int h, int target)
     return -1;
 }
 
+int binarySearchIterative2(int arr[], int l, int h, int target)
+{
+    while (l <= h)
+    {
+        int mid = (l + h) / 2;
+
+        if (arr[mid] > target) h = mid-1;
+        else if (arr[mid] < target) l = mid + 1;
+        else return mid;
+    }
+
+    return -1;
+}
+
 int main()
 {
     printf("Enter the size of the array: ");
