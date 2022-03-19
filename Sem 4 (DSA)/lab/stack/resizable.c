@@ -15,18 +15,24 @@ struct Vector* createVector()
     return vec;
 }
 
-struct Vector* doubleSize(struct Vector* vec)
+void doubleSize(struct Vector* vec)
 {
-    vec->currSize *= 2;
-    vec = (struct Vector*)realloc(vec, sizeof(struct Vector)*vec->currSize);
-    vec->arr = (int *)realloc(vec->arr, sizeof(int)*vec->currSize);
+    int *arr = vec->arr;
 
-    return vec;
+    vec->currSize *= 2;
+    vec = (struct Vector*)malloc(sizeof(struct Vector)*vec->currSize);
+    vec->currSize = vec->currSize;
+    vec->top = -1;
+    vec->arr = (int*)malloc(sizeof(int)*vec->currSize);
+
+    for (int i = 0; i < vec->currSize / 2; i++)
+        vec->arr[i] = arr[i];
+
 }
 
 void push_back(int a, struct Vector* vec)
 {
-    if (vec->top == vec->currSize-1) vec = doubleSize(vec);
+    if (vec->top == vec->currSize-1) doubleSize(vec);
 
     vec->arr[++vec->top] = a;
 }
