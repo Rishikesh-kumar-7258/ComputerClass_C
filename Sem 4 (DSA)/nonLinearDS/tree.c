@@ -42,6 +42,6 @@ int main()
     for (int i = 0; i < node->childCount; i++)
         printf("%d\n", node->child[i]->data);
 
-        
+
     return 0;
 }
