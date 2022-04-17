@@ -20,7 +20,7 @@ void addChildLeft(struct Node* parent, struct Node* child)
     parent->left = child;
 }
 
-void addChildLeft(struct Node* parent, struct Node* child)
+void addChildRight(struct Node* parent, struct Node* child)
 {
     parent->right = child;
 }
@@ -47,6 +47,7 @@ void InOrder(struct Node* root)
     InOrder(root->right);
 }
 
+// 3. Postorder
 void PostOrder(struct Node* root)
 {
     if (!root) return ;
@@ -54,6 +55,12 @@ void PostOrder(struct Node* root)
     PostOrder(root->left);
     PostOrder(root->right);
     printf("%d ", root->data);
+}
+
+// step wise left to right traversal
+void LeftToRight(struct Node* root)
+{
+    
 }
 
 int main()
