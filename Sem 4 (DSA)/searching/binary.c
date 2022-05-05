@@ -13,7 +13,7 @@ int binarySearch(int arr[], int l, int h, int target)
     return binarySearch(arr, l, h, target);
 }
 
-int binarSearchIterative(int arr[], int l, int h, int target)
+int binarySearchIterative(int arr[], int l, int h, int target)
 {
     int stack[h];
     int top = -1;
@@ -66,7 +66,7 @@ int main()
     printf("Enter the element to find: ");
     int target; scanf("%d", &target);
 
-    int ans = binarSearchIterative(arr, 0, n-1, target);
+    int ans = binarySearchIterative2(arr, 0, n-1, target);
 
     if (ans == -1) printf("Not found\n");
     else printf("The element is present at %d\n", ans+1);

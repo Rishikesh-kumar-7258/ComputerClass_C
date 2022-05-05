@@ -69,7 +69,7 @@ int main()
     for (int i = 0; i < n; i++)
         scanf("%d", &arr[i]);
 
-    quickSortIterative(arr, 0, n - 1);
+    QuickSort(arr, 0, n - 1);
     printf("Sorted Array : ");
 
     for (int i = 0; i < n; i++)

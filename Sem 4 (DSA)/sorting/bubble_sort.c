@@ -30,10 +30,11 @@ void bubbleSort(int arr[], int n)
 int main()
 {
     printf("Enter the number of elements: ");
-    int n; scanf("%d", &n);
+    int n; 
+    scanf("%d", &n);
 
     printf("Enter the elements: ");
-    int arr[n] ;
+    int arr[n];
     for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
 
     bubbleSort(arr, n);
@@ -42,5 +43,6 @@ int main()
     {
         printf("%d ", arr[i]);
     }
+    printf("\n");
     return 0;
 }

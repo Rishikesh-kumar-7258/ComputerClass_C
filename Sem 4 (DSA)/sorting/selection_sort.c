@@ -13,10 +13,6 @@ void selectionSort(int arr[], int n)
         int temp = arr[i];
         arr[i] = arr[small_i];
         arr[small_i] = temp;
-
-        printf("%d iteration ", i);
-        for (int l = 0; l < n; l++) printf("%d ", arr[l]);
-        printf("\n");
     }
 }
 
