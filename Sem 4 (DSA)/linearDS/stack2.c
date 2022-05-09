@@ -17,6 +17,11 @@ struct Stack *createStack(int n)
     return st;
 }
 
+int isEmpty(struct Stack *st)
+{
+    return (st->curr == 0 ? 1 : 0);
+}
+
 void push(struct Stack *st, int val)
 {
     if (st->curr >= st->size)
@@ -50,11 +55,6 @@ int top(struct Stack *st)
     return st->arr[st->curr-1];
 }
 
-int isEmpty(struct Stack *st)
-{
-    return (st->curr == 0 ? 1 : 0);
-}
-
 int main()
 {
     struct Stack *st = createStack(5);
@@ -63,11 +63,13 @@ int main()
     if (temp == 1) printf("Stack is empty\n");
     else printf("Stack is not empty\n");
 
+    printf("Inserting data into the stack\n");
     push(st, 10);
     push(st, 5);
 
     printf("%d\n", top(st));
 
+    printf("Deleting data from the stack\n");
     pop(st);
     printf("%d\n", top(st));
 
