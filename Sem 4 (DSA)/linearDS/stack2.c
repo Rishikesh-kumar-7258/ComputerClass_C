@@ -30,11 +30,23 @@ void push(struct Stack *st, int val)
 
 void pop(struct Stack *st)
 {
+    if (isEmpty(st) == 1)
+    {
+        printf("Stack underflow\n");
+        return;
+    }
+
     st->curr--;
 }
 
 int top(struct Stack *st)
 {
+    if (isEmpty(st) == 1)
+    {
+        printf("stack is empty\n");
+        return -1;
+    }
+
     return st->arr[st->curr-1];
 }
 
