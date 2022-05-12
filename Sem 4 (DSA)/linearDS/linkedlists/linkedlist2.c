@@ -79,6 +79,29 @@ struct Node* reverse(struct Node* head)
   return ans;
 }
 
+void sort(struct Node ** head)
+{
+  if (*head == NULL || (*head)->next == NULL) return;
+
+  struct Node * temp = *head, *temp2, *smallest;
+  while (temp->next != NULL)
+  {
+    temp2 = temp->next;
+    smallest = temp;
+    while (temp2 != NULL)
+    {
+      if (smallest->val > temp2->val) smallest = temp2;
+      temp2 = temp2->next;
+    }
+
+    int t = temp->val;
+    temp->val = smallest->val;
+    smallest->val = t;
+
+    temp = temp->next;
+  }
+}
+
 int main()
 {
   struct Node* head = NULL;
@@ -89,6 +112,11 @@ int main()
   printf("After reversing: ");
   head = reverse(head);
   display(head);
+  printf("After sorting : ");
+  sort(&head);
+  display(head);
+
+
   deleteNode(&head, 3);
   printf("Current nodes : ");
   display(head);
