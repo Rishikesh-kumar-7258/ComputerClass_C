@@ -63,12 +63,31 @@ void display(struct Node* head)
   printf("\n");
 }
 
+struct Node* reverse(struct Node* head)
+{
+  if (head == NULL || head->next == NULL)
+    return head;
+
+  struct Node* ans = reverse(head->next), *temp = ans;
+
+  while (temp->next != NULL)
+    temp = temp->next;
+  
+  temp->next = head;
+  head->next = NULL;
+
+  return ans;
+}
+
 int main()
 {
   struct Node* head = NULL;
   for (int i = 0; i < 5; i++)
     insertNode(&head, i+1, i+5);
   printf("Current nodes : ");
+  display(head);
+  printf("After reversing: ");
+  head = reverse(head);
   display(head);
   deleteNode(&head, 3);
   printf("Current nodes : ");
